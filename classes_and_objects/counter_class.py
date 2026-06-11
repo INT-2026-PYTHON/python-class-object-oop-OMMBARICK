@@ -89,3 +89,23 @@ Explanation:
 =================================================
 
 """
+class Counter:
+    total = 0     
+    def __init__(self, name):
+        self.name = name
+        self.count = 0      
+
+    def increment(self, step=1):
+        self.count += step
+        Counter.total += step
+
+    def reset(self):
+        self.count = 0
+
+    def __str__(self):
+        return self.name + ": count=" + str(self.count)
+
+    def show_total(self):
+        return Counter.total
+
+
